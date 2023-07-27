@@ -56,18 +56,21 @@ h1 {
     padding: 1rem;
     background-color: var(--secondary-color);
     transition: all 0.5s ease-in-out;
+    visibility: hidden;
+    opacity: 0; 
+
 }
 
 /*  Right Side */
 #timeline ul li:nth-child(odd) div {
     left: 40px;
-
+    transform: translateX(200px);
 }
 
 /*  Left Side */
 #timeline ul li:nth-child(even) div {
     left: -434px;
-
+    transform: translateX(-200px);
 }
 
 /* Dots */
@@ -79,7 +82,7 @@ h1 {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: var(--secondary-color);
+    background: #fff;
     transform: translateX(-50%);
     transition: background 0.5s ease-in-out;
 }
@@ -134,4 +137,14 @@ h1 {
         border-width: 8px 16px 8px 0;
         border-color: transparent var(--secondary-color) transparent transparent;
     }   
+}
+
+/* Show Boxes */
+#timeline ul li.show div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+#timeline ul li.show::after{
+    background-color: var(--secondary-color);
 }
